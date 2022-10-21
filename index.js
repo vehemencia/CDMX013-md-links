@@ -1,6 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
+function readingFileContent(givenPath){
+    fs.readFile(givenPath, 'utf-8', (error, data) => {
+         if (!error) {
+             const myRegex = /\bhttps:\/\/([a-z0-9.a-z0-9\/]+)([-a-z0-9?=_&#\/]+)([.a-z0-9]+)/gi;
+             const searchingAnURL = data.match(myRegex);
+             if (searchingAnURL){
+                console.log(searchingAnURL);
+             } else console.log (`This document contains exactly zero links, go get some ice cream & enjoy your day`);        
+         } else console.log(error);
+     });
+ }
+
 function mdLinks(givenPath) {
     try {
         if (path.isAbsolute(givenPath) === false) {
@@ -10,13 +22,9 @@ function mdLinks(givenPath) {
         if (fs.lstatSync(givenPath).isDirectory() === true) {
             console.log('This is a folder')
         } else {
-            console.log('This is a file');
             if (path.extname(givenPath) === '.md') {
-                fs.readFile(givenPath, 'utf-8', (error, data) => {
-                    if (!error) {
-                        console.log(data);
-                    } else console.log(error);
-                });
+                console.log('This is a .md file');
+                readingFileContent(givenPath);
             } else {
                 console.log('This is not a .md file, please try again')
             };
@@ -26,4 +34,4 @@ function mdLinks(givenPath) {
     }
 };
 
-mdLinks('documentss');
+mdLinks('documents/without-links.md');

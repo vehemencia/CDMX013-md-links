@@ -27,12 +27,6 @@ Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
 muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
 la información que se quiere compartir.
 
-Dentro de una comunidad de código abierto, nos han propuesto crear una
-herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
-en formato `Markdown`, para verificar los links que contengan y reportar
-algunas estadísticas.
-
-![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
 
 ## 2. Resumen del proyecto
 
@@ -44,12 +38,6 @@ programa que se ejecute usando Node.js. Aprenderemos sobre procesos
 (`process.env`, `process.argv`, ...), cómo interactuar con el sistema archivos,
 cómo hacer consultas de red, etc.
 
-[Node.js](https://nodejs.org/es/) es un entorno de ejecución para JavaScript
-construido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
-Esto nos va a permitir ejecutar JavaScript en el entorno del sistema operativo,
-ya sea tu máquina o un servidor, lo cual nos abre las puertas para poder
-interactuar con el sistema en sí, archivos, redes, ...
-
 Diseñar tu propia librería es una experiencia fundamental para cualquier
 desarrollador porque que te obliga a pensar en la interfaz (API) de tus
 _módulos_ y cómo será usado por otros developers. Debes tener especial
@@ -57,102 +45,31 @@ consideración en peculiaridades del lenguaje, convenciones y buenas prácticas.
 
 ## 3. Objetivos de aprendizaje
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
-
 ### JavaScript
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+- [✓] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
 - [ ] **Arrays (arreglos)**
 
-  <details><summary>Links</summary><p>
-
-  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
-
 - [ ] **Objetos (key, value)**
-
-  <details><summary>Links</summary><p>
-
-  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
-</p></details>
-
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
-
-  <details><summary>Links</summary><p>
-
-  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
 
 - [ ] **Funciones (params, args, return)**
 
-  <details><summary>Links</summary><p>
-
-  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/03-functions)
-  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/02-arrow)
-  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-
 - [ ] **Recursión o recursividad**
 
-  <details><summary>Links</summary><p>
-
-  * [Píldora recursión - YouTube Laboratoria Developers](https://www.youtube.com/watch?v=lPPgY3HLlhQ)
-  * [Recursión o Recursividad - Laboratoria Developers en Medium](https://medium.com/laboratoria-developers/recursi%C3%B3n-o-recursividad-ec8f1a359727)
-</p></details>
-
 - [ ] **Módulos de CommonJS**
-
-  <details><summary>Links</summary><p>
-
-  * [Modules: CommonJS modules - Node.js Docs](https://nodejs.org/docs/latest/api/modules.html)
-</p></details>
 
 - [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
 
 - [ ] **Callbacks**
 
-  <details><summary>Links</summary><p>
-
-  * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-</p></details>
-
 - [ ] **Promesas**
-
-  <details><summary>Links</summary><p>
-
-  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  * [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
 
 - [ ] **Pruebas unitarias (unit tests)**
 
-  <details><summary>Links</summary><p>
-
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
-
 - [ ] **Pruebas asíncronas**
 
-  <details><summary>Links</summary><p>
-
-  * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
-</p></details>
-
 - [ ] **Uso de mocks y espías**
-
-  <details><summary>Links</summary><p>
-
-  * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
-</p></details>
 
 - [ ] **Pruebas de compatibilidad en múltiples entornos de ejecución**
 
@@ -164,49 +81,23 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Instalar y usar módulos con npm**
 
-  <details><summary>Links</summary><p>
-
-  * [Sitio oficial de npm (en inglés)](https://www.npmjs.com/)
-</p></details>
-
 - [ ] **Configuración de package.json**
-
-  <details><summary>Links</summary><p>
-
-  * [package.json - Documentación oficial (en inglés)](https://docs.npmjs.com/files/package.json)
-</p></details>
 
 - [ ] **Configuración de npm-scripts**
 
-  <details><summary>Links</summary><p>
-
-  * [scripts - Documentación oficial (en inglés)](https://docs.npmjs.com/misc/scripts)
-</p></details>
-
 - [ ] **process (env, argv, stdin-stdout-stderr, exit-code)**
-
-  <details><summary>Links</summary><p>
-
-  * [Process - Documentación oficial (en inglés)](https://nodejs.org/api/process.html)
-</p></details>
 
 - [ ] **File system (fs, path)**
 
-  <details><summary>Links</summary><p>
-
-  * [File system - Documentación oficial (en inglés)](https://nodejs.org/api/fs.html)
-  * [Path - Documentación oficial (en inglés)](https://nodejs.org/api/path.html)
-</p></details>
-
 ### Control de Versiones (Git y GitHub)
 
-- [ ] **Git: Instalación y configuración**
+- [✓] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [✓] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
 
 - [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [✓] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
 - [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
 
@@ -216,19 +107,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Consulta o petición (request) y respuesta (response).**
 
-  <details><summary>Links</summary><p>
-
-  * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
-  * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
-</p></details>
-
 - [ ] **Códigos de status de HTTP**
-
-  <details><summary>Links</summary><p>
-
-  * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
-  * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
-</p></details>
 
 ## 4. Consideraciones generales
 
@@ -238,7 +117,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   CLI) deben estar implementados en JavaScript para ser ejecutados con
   Node.js. **Está permitido usar librerías externas**.
 
-* Tu módulo **debe ser instalable** via `npm install <github-user>/md-links`. Este
+* Tu módulo **debe ser instalable** via `npm install vehemencia/md-links`. Este
   módulo debe incluir tanto un _ejecutable_ que podamos invocar en la línea de
   comando como una interfaz que podamos importar con `require` para usarlo
   programáticamente.
@@ -254,9 +133,6 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   que los transforme en `requires` y `module.exports` con ayuda de **babel**.
 
 ## 5. Criterios de aceptación mínimos del proyecto
-
-Para comenzar este proyecto tendrás que hacer un **_fork_** y **_clonar_** este
-repositorio.
 
 Antes de comenzar a codear, es necesario crear un **plan de acción**. Esto debería
 quedar detallado en el `README.md` de tu repo y en una serie de **_issues_**
@@ -537,39 +413,23 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 
 ## 10. Achicando el problema
 
-Un "superpoder" que esperamos puedas desarrollar durante el bootcamp
-es el de definir "mini-proyectos" que te acerquen paso a paso a
-la solución del "gran proyecto". Es el equivalente a comenzar armando
-esquinas o bordes del rompecabezas/puzzle sin saber necesariamente
-cómo encajarán al final. Déjate llevar y explora.
-
 Estas son algunas sugerencias:
 
 ### Lee un archivo
 
 Como primer reto, puedes tratar de leer un solo archivo con
-una ruta fija e imprimir su contenido en la consola con un `console.log`.
-
+una ruta fija e imprimir su contenido en la consola con un `console.log`. 
 La librería nativa `FS` (FileSystem) te será de utilidad.
 
 ### Averigua la extensión de un archivo
 
 Ya sabiendo leer un archivo, aventúrate a conocer cual
-es su extensión.
-
-Recuerda, las extensiones son esas letras al final del
-nombre de un archivo, por ejemplo: .js, .txt, .doc, etc
-
-Aquí también podrá ser útil `FS`.
+es su extensión. Aquí también podrá ser útil `FS`.
 
 ### Obtén el contenido de un directorio
 
 Este proyecto consiste en buscar archivos, pero para eso,
-primero debes poder verlos.
-
-Intenta imprimir en consola la lista de archivos en una carpeta.
-
-La librería `FS` también te será útil aquí.
+primero debes poder verlos. Intenta imprimir en consola la lista de archivos en una carpeta.
 
 ### Une dos rutas
 

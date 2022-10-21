@@ -1,5 +1,5 @@
 [The Wire](https://www.thewire.co.uk/home/) 
 [Tone Glow](https://www.toneglow.net/)
 [Bandcamp Daily](https://daily.bandcamp.com/) 
-[Pitchfork](https://pitchfork.com/)
+[Pitchfork](https://www.pitchfork.com/)
 [Noise Not Music](https://noisenotmusic.com/) 
