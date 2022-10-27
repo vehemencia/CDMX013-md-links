@@ -2,42 +2,39 @@ const fs = require('fs');
 const path = require('path');
 const relativeToAbsolute = require('./modularization/relative-to-absolute-path.js');
 const isItMarkdown = require('./modularization/verify-markdown-file.js');
-const obtainLinks = require('./modularization/obtain-links.js')
-
-// function mdLinks(givenPath) {
-//     try {
-//         relativeToAbsolute(givenPath);
-//         if (fs.lstatSync(givenPath).isDirectory() === true) {
-//             console.log('This is a folder')
-//         } else {
-//             isItMarkdown(givenPath);
-//             obtainLinks(givenPath)
-//         }
-//     } catch (error) {
-//         console.log(`Something happened, but it isn't your fault, the document you are looking for is missing or the path doesn't exist`);
-//     }
-// }
+const obtainLinks = require('./modularization/obtain-links.js');
+// const validateLinks = require('./modularization/validate-links.js');
+const axios = require('axios');
 
 function mdLinks(givenPath, options) {
     const mdLinksPromise = new Promise((resolve, reject) => {
-        if (options === '{validate: false}' || options === undefined) {
-            relativeToAbsolute(givenPath);
-            if (fs.lstatSync(givenPath).isDirectory() === true) {
-                resolve('This is a folder')
-            } else {
-                if (isItMarkdown(givenPath) === true){
+        const absolutePath = relativeToAbsolute(givenPath);
+        if (fs.lstatSync(absolutePath).isDirectory() === true) {
+            resolve('This is a folder, try with a .md document');
+        } else {
+            if (options === '{validate: false}' || options === undefined) {
+                if (isItMarkdown(absolutePath) === true) {
                     resolve(obtainLinks(givenPath))
                 } else {
-                    reject('This is not a md file')
+                    reject('This is not a .md file')
                 }
-            } 
-        } else {
-            reject(new Error ('Error'));
+            } else if (options === '{validate: true}') {
+                const httpRequest = axios.get('https://pitchfork.com/');
+                return httpRequest
+                    .then(response => console.log(response))
+            }
         }
-    });
+    })
     return mdLinksPromise;
 }
 
-const myPromise = mdLinks('documents/music-sources.md');
-
+const myPromise = mdLinks('documents/music-sources.md', '{validate: true}');
 myPromise.then(console.log)
+
+// function validateLinks() {
+//     const httpRequest = axios.get('https://www.pitchfork.com');
+//     return httpRequest
+//         .then(response => console.log(response))
+// }
+
+// validateLinks()
