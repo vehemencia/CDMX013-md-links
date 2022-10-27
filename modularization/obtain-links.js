@@ -15,7 +15,7 @@ function obtainLinks(givenPath) {
                 for(let i = 0; i < itIsAnURL.length; i++){
                     linkInfo = {
                         href: itIsAnURL[i],
-                        text: thisIsTheText[i],
+                        text: thisIsTheText[i].slice(0,49),
                         file: givenPath
                     }
                     console.log(linkInfo)
