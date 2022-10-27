@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "commonjs": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": "eslint:recommended",
     "overrides": [
@@ -12,6 +13,7 @@ module.exports = {
     },
     "rules": {
         "no-unused-vars": "off",
-        "no-useless-escape": "off"
+        "no-useless-escape": "off",
+        "no-undef": "off"
     }
 }

@@ -6,23 +6,20 @@ function obtainLinks(givenPath) {
     const myRegexForText = /(?<=\[).+?(?=\])/gi;
     let eachLink = [];
     let linkInfo = {};
-    const document = fs.readFile(givenPath, 'utf-8', (error, data) => {
-        if (!error) {
-            const itIsAnURL = data.match(myRegex);
-            const thisIsTheText = data.match(myRegexForText);
-            if (itIsAnURL){
-                console.log(itIsAnURL);
-                for(let i = 0; i < itIsAnURL.length; i++){
-                    linkInfo = {
-                        href: itIsAnURL[i],
-                        text: thisIsTheText[i].slice(0,49),
-                        file: givenPath
-                    }
-                    console.log(linkInfo)
-                }
-            } else console.log(`This document contains exactly zero links, go get some ice cream & enjoy your day`);
+    const document = fs.readFileSync(givenPath, 'utf-8');
+    const itIsAnURL = document.match(myRegex);
+    const thisIsTheText = document.match(myRegexForText);
+    if (itIsAnURL) {
+        for (let i = 0; i < itIsAnURL.length; i++) {
+            linkInfo = {
+                href: itIsAnURL[i],
+                text: thisIsTheText[i].slice(0, 50),
+                file: givenPath
+            }
+            eachLink.push(linkInfo);
         }
-    })
+    }
+    return eachLink;
 }
 
 module.exports = obtainLinks;

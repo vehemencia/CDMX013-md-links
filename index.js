@@ -23,14 +23,21 @@ function mdLinks(givenPath, options) {
         if (options === '{validate: false}' || options === undefined) {
             relativeToAbsolute(givenPath);
             if (fs.lstatSync(givenPath).isDirectory() === true) {
-                console.log('This is a folder')
+                resolve('This is a folder')
             } else {
-                isItMarkdown(givenPath);
-                resolve(obtainLinks(givenPath))
-            }
+                if (isItMarkdown(givenPath) === true){
+                    resolve(obtainLinks(givenPath))
+                } else {
+                    reject('This is not a md file')
+                }
+            } 
+        } else {
+            reject(new Error ('Error'));
         }
-        return mdLinksPromise
-    })
+    });
+    return mdLinksPromise;
 }
 
-mdLinks('documents/music-sources.md', '{validate: false}');
+const myPromise = mdLinks('documents/music-sources.md');
+
+myPromise.then(console.log)
