@@ -19,7 +19,9 @@ function obtainLinks(givenPath) {
             eachLink.push(linkInfo);
         }
     }
-    return eachLink;
+    if (eachLink.length == 0) {
+        return `This document contains exactly zero links, go get some ice cream & enjoy your day`;
+    } else return eachLink;
 }
 
 module.exports = obtainLinks;
