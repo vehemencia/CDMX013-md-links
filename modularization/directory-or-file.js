@@ -4,7 +4,7 @@ const relativeToAbsolute = require('./relative-to-absolute-path.js');
 function isDirectoryOrFile(relativeToAbsolutePath) {
     const givenRoute = fs.lstatSync(relativeToAbsolute(relativeToAbsolutePath)).isDirectory();
     if (givenRoute === true) {
-        return 'This is a folder'
+        return 'This is a folder, try with a document'
     } else {
         if (isItMarkdown(givenPath) === true) {
             obtainLinks(givenPath)
