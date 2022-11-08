@@ -4,7 +4,7 @@ const obtainLinks = require('./obtain-links.js');
 function validateLinks(givenPath) {
         let arrayWithObjects = obtainLinks(givenPath);
         if (typeof arrayWithObjects === 'string') {
-            return 'uwu';
+            return `This document contains exactly zero links, go get some ice cream & enjoy your day`;
         } else {
         const linksInside = arrayWithObjects.forEach(linkProperty => {
             const request = axios.get(linkProperty.href);
