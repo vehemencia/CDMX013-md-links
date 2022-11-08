@@ -29,4 +29,4 @@ function mdLinks(givenPath, options) {
     return mdLinksPromise;
 }
 
-mdLinks('documents/without-links.md', {validate: true}).then(console.log).catch(console.log);
+mdLinks('documents/music-sources.md', {validate: true}).then(console.log).catch(console.log);
