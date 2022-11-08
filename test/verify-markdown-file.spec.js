@@ -1,4 +1,3 @@
-const { it } = require('node:test');
 const isItMarkdown = require('../modularization/verify-markdown-file.js')
 
 describe('isItMarkdown', () => {
@@ -6,7 +5,11 @@ describe('isItMarkdown', () => {
       expect(typeof isItMarkdown).toBe('function');
     });
 
-    // it('should only verify markdown files', () => {
-      
-    // });
+    it('should only verify markdown files', () => {
+      expect(isItMarkdown('documents/music-sources.md')).toBe(true)
+    });
+
+    it('should reject files with an extension other than .md', () => {
+      expect(isItMarkdown('documents/music-sources.txt')).toBe(false)
+    });
   });
