@@ -6,7 +6,7 @@ function validateLinks(givenPath) {
         if (typeof arrayWithObjects === 'string') {
             return `This document contains exactly zero links, go get some ice cream & enjoy your day`;
         } else {
-        const linksInside = arrayWithObjects.forEach(linkProperty => {
+        const linksInside = arrayWithObjects.map(linkProperty => {
             const request = axios.get(linkProperty.href);
             return request
                 .then((response) => {
@@ -15,7 +15,7 @@ function validateLinks(givenPath) {
                         status: response.status,
                         message: 'ok'
                     };
-                    console.log(validStatus)
+                    return validStatus
                 })
                 .catch((error) => {
                     let brokenStatus = {
@@ -23,9 +23,11 @@ function validateLinks(givenPath) {
                         status: error.response.status,
                         message: 'fail'
                     };
-                    console.log(brokenStatus)
+                    return brokenStatus
                 })
         })
+        return Promise.all(linksInside).then(result => console.log(result))
+
     }
 }
 
