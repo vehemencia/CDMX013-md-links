@@ -27,7 +27,6 @@ function validateLinks(givenPath) {
                 })
         })
         return Promise.all(linksInside).then(result => console.log(result))
-
     }
 }
 
