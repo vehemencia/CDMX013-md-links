@@ -26,7 +26,6 @@ function validateLinks(givenPath) {
                     console.log(brokenStatus)
                 })
         })
-        return linksInside;
     }
 }
 
