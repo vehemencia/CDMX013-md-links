@@ -47,7 +47,7 @@ consideración en peculiaridades del lenguaje, convenciones y buenas prácticas.
 
 ### JavaScript
 
-- [✓] **Diferenciar entre tipos de datos primitivos y no primitivos**
+- [ ✓ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
 - [ ] **Arrays (arreglos)**
 
@@ -91,13 +91,13 @@ consideración en peculiaridades del lenguaje, convenciones y buenas prácticas.
 
 ### Control de Versiones (Git y GitHub)
 
-- [✓] **Git: Instalación y configuración**
+- [ ✓ ] **Git: Instalación y configuración**
 
-- [✓] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [ ✓ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
 
 - [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
 
-- [✓] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [ ✓ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
 - [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
 
@@ -410,66 +410,3 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 * [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
   lines, y branches.
 * [ ] Pasa tests (y linters) (`npm test`).
-
-## 10. Achicando el problema
-
-Estas son algunas sugerencias:
-
-### Lee un archivo
-
-Como primer reto, puedes tratar de leer un solo archivo con
-una ruta fija e imprimir su contenido en la consola con un `console.log`. 
-La librería nativa `FS` (FileSystem) te será de utilidad.
-
-### Averigua la extensión de un archivo
-
-Ya sabiendo leer un archivo, aventúrate a conocer cual
-es su extensión. Aquí también podrá ser útil `FS`.
-
-### Obtén el contenido de un directorio
-
-Este proyecto consiste en buscar archivos, pero para eso,
-primero debes poder verlos. Intenta imprimir en consola la lista de archivos en una carpeta.
-
-### Une dos rutas
-
-Para poder acceder a carpetas y archivos será necesario que
-indiques en qué lugar de tu computadora se encuentran, a esto
-le llamamos **rutas**.
-
-Usa la librería nativa `path` para unir dos segmentos de ruta,
-por ejemplo, si queremos unir:
-
-1) /home/Laboratoria/
-2) ./test
-
-El resultado sería: /home/Laboratoria/test
-
-### Recursividad
-
-Este proyecto se ha de resolver de forma casi natural con
-**recursividad**.
-
-¿Por qué?.
-
-Porque no conocemos realmente cuantas carpetas y archivos
-tendremos que recorrer antes de terminar.
-
-Si recibes una ruta de carpeta, no sabrás de ante mano si
-dentro hay más carpetas o muchos archivos.
-
-Por ello, asegurate bien de entender de qué trata la
-recursividad y ver algunos ejemplos.
-
-Entre los recursos de este proyecto hay un video que te ayudará.
-
-### Crea una promesa
-
-El valor de retorno de nuestra librería es una `Promesa`,
-no un `Array`.
-
-Prueba leyendo sobre las promesas y creando una por tu
-cuenta utilizando **new Promise()**
-
-Es importante que sepas qué es un **callback** pues las
-promesas los utilizarán.
